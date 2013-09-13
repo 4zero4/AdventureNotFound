@@ -1,6 +1,10 @@
-lvl=
 name=
-str=
 race=
 charClass=
 gender=
+lvl=
+str=
+Agi=
+Vit=
+Cha=
+Int=

@@ -64,7 +64,7 @@ public class SavedData {
 		System.out.print(lines);
 	}
 	
-	public void save() {
+	public void save(ArrayList<String> lines) {
 		
 	}
 
