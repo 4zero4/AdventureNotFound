@@ -2,14 +2,12 @@ package framework;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.List;
 
 public class FileWizard {
@@ -26,12 +24,8 @@ public class FileWizard {
 		//jacks.writeFile(fileName, lines);
 		//jacks.readFile(fileName);
 	}*/
-	
-	public FileWizard() {
-	
-	}
 
-	void readFile(String FileName) throws IOException {
+	public static void readFile(String FileName) throws IOException {
 		Path path = Paths.get(FileName);
 		
 		try (BufferedReader reader = Files.newBufferedReader(path, ENCODING)){
@@ -46,7 +40,7 @@ public class FileWizard {
 		}
 	}
   
-	void writeFile(String FileName, List<String> Lines) throws IOException {
+	public static void writeFile(String FileName, List<String> Lines) throws IOException {
 		Path path = Paths.get(FileName);
 		
 		try (BufferedWriter writer = Files.newBufferedWriter(path, ENCODING)){

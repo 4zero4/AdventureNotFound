@@ -9,9 +9,8 @@ public class SavedData {
 	File saveDir, saveFile;
 	
 	public static void main(String[] args) throws IOException {
-		SavedData save = new SavedData("Save", "Saves");
 		SavedData config = new SavedData("Config", "Settings");
-		
+		SavedData save = new SavedData("Save", "Saves");
 	}
 	
 	public SavedData(String dir, String baseFile) throws IOException {
