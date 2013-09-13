@@ -1,13 +1,11 @@
 package omella;
-
-
-
 /**
  * 
  * @author Bruom
  * 
  * The real deal here, the class that creates our Juvi-hero.
  */
+
 public class Adventurer {
     int lvl;
     int[] att = new int[5];  //0-Str 1-Agi 2-Vit 3-Cha 4-Int

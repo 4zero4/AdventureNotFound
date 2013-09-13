@@ -2,11 +2,13 @@ package framework;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class SavedData {
 	boolean createDir,createFile;
 	
 	File savedDir, savedFile;
+	public String filePath="";
 	
 	public static void main(String[] args) throws IOException {
 		SavedData config = new SavedData("Config", "Settings");
@@ -41,6 +43,7 @@ public class SavedData {
 			
 			if(result) {    
 				System.out.println("File created.");
+				
 			} else {
 				System.out.println("File could not be created.");
 			}
@@ -49,15 +52,16 @@ public class SavedData {
 			this.load(savedFile); //Load stuff from the file
 		}	
 
-		String filePath = savedFile.getAbsoluteFile().toString();
+		filePath = savedFile.getAbsoluteFile().toString();
 		System.out.println("File located at: " + filePath + "\n");
 		
 	}
 	
-	
-	public void load(File savedFile) {
-		
-		
+	public void load(File savedFile) throws IOException {
+		String dir = savedFile.getAbsoluteFile().toString();
+		ArrayList<String> lines = new ArrayList<String>();
+		lines = FileWizard.readFile(dir);
+		System.out.print(lines);
 	}
 	
 	public void save() {

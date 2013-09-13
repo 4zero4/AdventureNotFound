@@ -1,0 +1,6 @@
+lvl=
+name=
+str=
+race=
+charClass=
+gender=

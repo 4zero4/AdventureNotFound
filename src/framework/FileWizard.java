@@ -15,7 +15,7 @@ public class FileWizard {
 	
 	final static Charset ENCODING = StandardCharsets.UTF_8;
 
-	public static List<String> readFile(String FileName) throws IOException {
+	public static ArrayList<String> readFile(String FileName) throws IOException {
 		Path path = Paths.get(FileName);
 		
 		try (BufferedReader reader = Files.newBufferedReader(path, ENCODING)){
@@ -23,7 +23,6 @@ public class FileWizard {
 			ArrayList<String> lines = new ArrayList<String>();
 			
 			while ((currentLine = reader.readLine()) != null) {
-				System.out.println(currentLine);
 				lines.add(currentLine);
 			}
 			
