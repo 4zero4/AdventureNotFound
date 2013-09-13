@@ -10,7 +10,7 @@ public class SavedData {
 	
 	public static void main(String[] args) throws IOException {
 		SavedData config = new SavedData("Config", "Settings");
-		SavedData save = new SavedData("Save", "Saves");
+		SavedData saves = new SavedData("Save", "Saves");
 	}
 	
 	public SavedData(String dir, String baseFile) throws IOException {
@@ -46,7 +46,7 @@ public class SavedData {
 			}
 		} else {
 			System.out.println("File already exists.");
-			//TODO load stuff from the file.
+			this.load(); //Load stfrom the file
 		}	
 
 		String fileName = saveFile.getAbsoluteFile().toString();
@@ -54,24 +54,12 @@ public class SavedData {
 		
 	}
 	
-	public void createSaveData(String saveName) {
+	/*public void createSaveData(String saveName) {
 		saveFile = new File(saveDir, (saveName + ".txt"));
-	}
-	
-	public boolean checkSaveData(String saveName) {
-		if (!saveDir.exists()) {
-			saveFile = new File(saveDir, (saveName + ".txt"));
-			if (!saveFile.exists()) {
-				return true;
-			} else {
-				return false;
-			}
-		} else {
-			return false;
-		}
-	}
+	}*/
 	
 	public void load() {
+	
 		
 	}
 	
