@@ -29,16 +29,14 @@ public class InputReader {
 		ArrayList<String> aux2 = new ArrayList<String>();
 		String[] aux = input.split(" ");
 		for(int i = 0; i<aux.length; i++){
-			aux2.add(i, aux[i]);
+			aux2.add(i, aux[i].toLowerCase());
 		}
 		for(int i = 0; i<aux2.size(); i++){
 			if(!useless.contains((String)aux2.get(i))){
 				actual.add(aux2.get(i));
 			}
 		}
-		for(int i=0 ; i<actual.size(); i++){
-			actual.get(i).toLowerCase();
-		}
+
 		
 	}
 
