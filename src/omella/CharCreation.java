@@ -1,5 +1,7 @@
 package omella;
 
+import framework.*;
+
 import java.util.*;
 
 /**
@@ -9,7 +11,6 @@ import java.util.*;
  * This class holds all the methods relevant to the creation of a character.
  */
 public class CharCreation {
-    static Scanner stdin = new Scanner(System.in);
     
     public static int[] rollAtt(String charClass){
         int[] att = new int[5];
@@ -19,28 +20,28 @@ public class CharCreation {
             }while(att[i]<6);
         }
         switch(charClass){
-            case "Warrior":
+            case "warrior":
                 att[0] += 4;
                 att[1] += 0;
                 att[2] += 2;
                 att[3] -= 2;
                 att[4] -= 4; 
                 break;
-            case "Ranger":
+            case "ranger":
                 att[0] -= 4;
                 att[1] += 4;
                 att[2] -= 2;
                 att[3] += 2;
                 att[4] += 0;
                 break;
-            case "Mage":
+            case "mage":
                 att[0] -= 4;
                 att[1] += 1;
                 att[2] -= 2;
                 att[3] += 1;
                 att[4] += 4;
                 break;
-            case "Thief":
+            case "thief":
                 att[0] -= 4;
                 att[1] += 3;
                 att[2] -= 2;
@@ -60,32 +61,39 @@ public class CharCreation {
     public static String setName(){
         String name;
         System.out.println("What is yer name?");
-        name = stdin.nextLine();
-        return name;
+        InputReader gaben = new InputReader();
+        gaben.read();
+        return gaben.getInput();
     }
     
     public static String setRace(String name){
         System.out.println("What race are you, " + name + "?");
-        String race = stdin.nextLine();
+        InputReader gaben = new InputReader();
+        gaben.read();
+        gaben.trimSyntax();
+        String race = gaben.getActual();
         boolean done = false;
         while(done == false){
             switch(race){
-                case "Human":
+                case "human":
                     done = true;
                     break;
-                case "Elf":
+                case "elf":
                     done = true;
                     break;
-                case "Dwarf":
+                case "dwarf":
                     done = true;
                     break;
-                case "Gnome":
+                case "gnome":
                     done = true;
                     break;
                 default:
                     System.out.println(race + " is not a valid race.");                    
                     System.out.println("Please choose a valid one: Human, Elf, Dwarf or Gnome");
-                    race = stdin.nextLine();
+                    gaben.clear();
+                    gaben.read();
+                    gaben.trimSyntax();
+                    race = gaben.getActual();
             }
         }
         return race;
@@ -93,26 +101,32 @@ public class CharCreation {
     
     public static String setClass(String name){
         System.out.println("What class are you, " + name + "?");
-        String charClass = stdin.nextLine();
+        InputReader gaben = new InputReader();
+        gaben.read();
+        gaben.trimSyntax();
+        String charClass = gaben.getActual();
         boolean done = false;
         while(done == false){
             switch(charClass){
-                case "Warrior":
+                case "warrior":
                     done = true;
                     break;
-                case "Ranger":
+                case "ranger":
                     done = true;
                     break;
-                case "Mage":
+                case "mage":
                     done = true;
                     break;
-                case "Thief":
+                case "thief":
                     done = true;
                     break;
                 default:
                     System.out.println(charClass + " is not a valid class.");
                     System.out.println("Please choose a valid one: Warrior, Ranger, Mage or Thief.");
-                    charClass = stdin.nextLine();
+                    gaben.clear();
+                    gaben.read();
+                    gaben.trimSyntax();
+                    charClass = gaben.getActual();
             }
         }
         return charClass;
@@ -120,7 +134,10 @@ public class CharCreation {
     
     public static String setGender(){
         System.out.println("Are you male or female?");
-        String gender = stdin.nextLine().toLowerCase();
+        InputReader gaben = new InputReader();
+        gaben.read();
+        gaben.trimSyntax();
+        String gender = gaben.getActual();
         boolean fuentes = false;
         while(fuentes==false){
             switch(gender){
@@ -133,7 +150,10 @@ public class CharCreation {
                 default:
                     System.out.println(gender + " is not a valid gender.");
                     System.out.println("Please choose a valid one: male or female.");
-                    gender = stdin.nextLine().toLowerCase();
+                    gaben.clear();
+                    gaben.read();
+                    gaben.trimSyntax();
+                    gender = gaben.getActual();
             }
         }
         return gender;
