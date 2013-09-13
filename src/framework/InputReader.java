@@ -73,5 +73,12 @@ public class InputReader {
 		input = "";
 		actual.clear();
 	}
+	
+	public boolean inputCheck(String expected, String forbidden){
+		if(actual.contains(expected) && !actual.contains(forbidden)){
+			return true;
+		}
+		return false;
+	}
 
 }
