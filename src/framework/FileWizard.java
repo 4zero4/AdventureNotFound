@@ -8,35 +8,26 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public class FileWizard {
 	
 	final static Charset ENCODING = StandardCharsets.UTF_8;
-  
-	/*public static void main(String[] args) throws IOException{
-		
-		List<String> lines;
-		lines = Arrays.asList("Thais Campagnolli", "Bruno Omella", "Pedro Augusto");
-		
-		FileWizard jacks = new FileWizard();
-		
-		//jacks.writeFile(fileName, lines);
-		//jacks.readFile(fileName);
-	}*/
 
-	public static void readFile(String FileName) throws IOException {
+	public static List<String> readFile(String FileName) throws IOException {
 		Path path = Paths.get(FileName);
 		
 		try (BufferedReader reader = Files.newBufferedReader(path, ENCODING)){
 			String currentLine = null;
-			System.out.println("File content: ");
+			ArrayList<String> lines = new ArrayList<String>();
 			
 			while ((currentLine = reader.readLine()) != null) {
-				//process each line here
 				System.out.println(currentLine);
-			}  
+				lines.add(currentLine);
+			}
 			
+			return lines;
 		}
 	}
   

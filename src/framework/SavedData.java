@@ -6,7 +6,7 @@ import java.io.IOException;
 public class SavedData {
 	boolean createDir,createFile;
 	
-	File saveDir, saveFile;
+	File savedDir, savedFile;
 	
 	public static void main(String[] args) throws IOException {
 		SavedData config = new SavedData("Config", "Settings");
@@ -15,14 +15,14 @@ public class SavedData {
 	
 	public SavedData(String dir, String baseFile) throws IOException {
 		
-		saveDir = new File(dir);
-		saveFile = new File(saveDir, (baseFile+".txt"));
+		savedDir = new File(dir);
+		savedFile = new File(savedDir, (baseFile+".txt"));
 		
 		// if the directory doesn't exist, create it.
-		System.out.println("Checking directory: " + saveDir);
-		if (!saveDir.exists()) {
-			System.out.println("Creating directory: " + saveDir);
-			boolean result = saveDir.mkdir();  
+		System.out.println("Checking directory: " + savedDir);
+		if (!savedDir.exists()) {
+			System.out.println("Creating directory: " + savedDir);
+			boolean result = savedDir.mkdir();  
 			
 			if(result) {    
 				System.out.println("Directory created.");
@@ -34,10 +34,10 @@ public class SavedData {
 		}
 		
 		// if the file doesn't exist, create it.
-		System.out.println("Checking file: " + saveFile);
-		if (!saveFile.exists()) {
-			System.out.println("Creating file: " + saveFile);
-			boolean result = saveFile.createNewFile();  
+		System.out.println("Checking file: " + savedFile);
+		if (!savedFile.exists()) {
+			System.out.println("Creating file: " + savedFile);
+			boolean result = savedFile.createNewFile();  
 			
 			if(result) {    
 				System.out.println("File created.");
@@ -46,20 +46,17 @@ public class SavedData {
 			}
 		} else {
 			System.out.println("File already exists.");
-			this.load(); //Load stfrom the file
+			this.load(savedFile); //Load stuff from the file
 		}	
 
-		String fileName = saveFile.getAbsoluteFile().toString();
-		System.out.println("File located at: " + fileName + "\n");
+		String filePath = savedFile.getAbsoluteFile().toString();
+		System.out.println("File located at: " + filePath + "\n");
 		
 	}
 	
-	/*public void createSaveData(String saveName) {
-		saveFile = new File(saveDir, (saveName + ".txt"));
-	}*/
 	
-	public void load() {
-	
+	public void load(File savedFile) {
+		
 		
 	}
 	
