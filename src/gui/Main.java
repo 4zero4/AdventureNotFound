@@ -42,7 +42,7 @@ public class Main {
 	}
 	
 	public static void instancia(){
-		Adventurer juvigar = new Adventurer("Juvigar",1,2);
+		Adventurer juvigar = new Adventurer();
 	}
 
 	
