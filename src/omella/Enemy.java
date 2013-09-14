@@ -1,9 +1,9 @@
 package omella;
 
 /**
- *
  * @author Rafael - aka Juvigar
  */
+
 public class Enemy 
 {
     int lvl;
