@@ -1,10 +1,15 @@
-name=
-race=
-charClass=
-gender=
-lvl=
-str=
-Agi=
-Vit=
-Cha=
-Int=
+!Do not touch this configuration file. You may end up breaking your save.
+!Character info
+[STR][NAME]= 
+[STR][RACE]=
+[STR][CLASS]= 
+[STR][GENDER]=
+[STR][TYPE]=
+[INT][LVL]=
+
+!Attributes
+[INT][STR]=
+[INT][AGI]=
+[INT][VIT]=
+[INT][CHA]=
+[INT][INT]=

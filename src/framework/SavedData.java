@@ -11,7 +11,6 @@ public class SavedData {
 	public String filePath="";
 	
 	public static void main(String[] args) throws IOException {
-		SavedData config = new SavedData("Config", "Settings");
 		SavedData saves = new SavedData("Save", "Saves");
 	}
 	
@@ -21,7 +20,7 @@ public class SavedData {
 		savedFile = new File(savedDir, (baseFile+".txt"));
 		
 		// if the directory doesn't exist, create it.
-		System.out.println("Checking directory: " + savedDir);
+		/*System.out.println("Checking directory: " + savedDir);
 		if (!savedDir.exists()) {
 			System.out.println("Creating directory: " + savedDir);
 			boolean result = savedDir.mkdir();  
@@ -33,7 +32,7 @@ public class SavedData {
 			}
 		} else {
 			System.out.println("Directory already exists.");
-		}
+		}*/
 		
 		// if the file doesn't exist, create it.
 		System.out.println("Checking file: " + savedFile);
@@ -50,7 +49,7 @@ public class SavedData {
 		} else {
 			System.out.println("File already exists.");
 			this.load(savedFile); //Load stuff from the file
-		}	
+		}
 
 		filePath = savedFile.getAbsoluteFile().toString();
 		System.out.println("File located at: " + filePath + "\n");
