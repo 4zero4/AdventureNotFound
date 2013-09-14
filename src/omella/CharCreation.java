@@ -2,8 +2,6 @@ package omella;
 
 import framework.*;
 
-import java.util.*;
-
 /**
  * 
  * @author Bruom
@@ -59,15 +57,14 @@ public class CharCreation {
     }
     
     public static String setName(){
-        String name;
         System.out.println("What is yer name?");
         InputReader gaben = new InputReader();
         gaben.read();
         return gaben.getInput();
     }
     
-    public static String setRace(String name){
-        System.out.println("What race are you, " + name + "?");
+    public static String setRace(){
+        System.out.println("What race are you?");
         InputReader gaben = new InputReader();
         gaben.read();
         gaben.trimSyntax();
@@ -99,8 +96,8 @@ public class CharCreation {
         return race;
     }
     
-    public static String setClass(String name){
-        System.out.println("What class are you, " + name + "?");
+    public static String setClass(){
+        System.out.println("What class are you?");
         InputReader gaben = new InputReader();
         gaben.read();
         gaben.trimSyntax();
@@ -157,6 +154,55 @@ public class CharCreation {
             }
         }
         return gender;
+    }
+    
+    /*
+     * These are randomizer methods. Used when creating characters with
+     * unspecified attributes.
+     */
+    
+    public static String randomGender(){
+    	int i = (int)(Math.random()*2);
+    	if(i == 0)
+    		return "female";
+    	return "male";
+    }
+    
+    public static String randomRace(){
+    	int i = (int)(Math.random()*4);        
+        switch (i){
+            case 0:
+                return "human";
+            case 1:
+                return "elf";
+            case 2:
+                return "dwarf";
+            case 3:
+                return "gnome";
+            default:
+                return "human";
+        }
+    }
+    
+    public static String randomClass(){
+    	int i = (int)(Math.random()*4);        
+        switch (i){
+            case 0:
+                return "warrior";
+            case 1:
+                return "ranger";
+            case 2:
+                return "mage";
+            case 3:
+                return "thief";
+            default:
+                return "warrior";               
+        }
+    }
+    
+    public static String randomName(String race){
+    	String name = "";
+    	return name;
     }
     
 }

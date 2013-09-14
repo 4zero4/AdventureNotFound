@@ -4,6 +4,7 @@ package omella;
  * @author Bruom
  * 
  * The real deal here, the class that creates our Juvi-hero.
+ * OBSOLETE: merged into Character
  */
 
 public class Adventurer {
@@ -17,8 +18,8 @@ public class Adventurer {
     public Adventurer(){
         this.name = CharCreation.setName();
         this.gender = CharCreation.setGender();
-        this.race = CharCreation.setRace(name);
-        this.charClass = CharCreation.setClass(name);
+        this.race = CharCreation.setRace();
+        this.charClass = CharCreation.setClass();
         this.lvl = 1;
         this.att = CharCreation.rollAtt(this.charClass);        
     }

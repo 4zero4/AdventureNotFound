@@ -4,8 +4,7 @@ package omella;
  * @author Rafael - aka Juvigar
  */
 
-public class Enemy 
-{
+public class Enemy {
     int lvl;
     int[] att = new int[5]; // 0-str 1-agi 2-vit 3-cha 4-int
     String name;
@@ -13,8 +12,7 @@ public class Enemy
     String enemyClass;
     String gender;
     
-    public Enemy()
-    {
+    public Enemy(){
         this.name = EnemyCreation.setName();
         this.gender = EnemyCreation.setGender();
         this.race = EnemyCreation.setRace();
@@ -23,8 +21,7 @@ public class Enemy
         this.att = EnemyCreation.setAtt(this.enemyClass);
     }
     
-    public void checkAtt()
-    {
+    public void checkAtt(){
         StringBuilder stdout = new StringBuilder();
         
         stdout.append("Str: ").append(att[0]).append("\n");
@@ -35,18 +32,15 @@ public class Enemy
         System.out.println("Attributes: \n" + stdout );
     }
     
-    public void checkRace()
-    {
+    public void checkRace(){
         System.out.println("I'm a "+ gender + " " + race);
     }
     
-    public void checkClass()
-    {
+    public void checkClass(){
         System.out.println("I'm a " + enemyClass);
     }
     
-    public void checkName()
-    {
+    public void checkName(){
         System.out.println("Arr, my name is " + name);
     }
     

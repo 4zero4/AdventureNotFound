@@ -6,11 +6,9 @@ import java.util.ArrayList;
  *
  * @author Rafael - aka Juvigar
  */
-public class EnemyCreation 
-{
+public class EnemyCreation {
     
-    public static String setName()
-    {
+    public static String setName(){
         String name;
         
         ArrayList nameList = new ArrayList ();
@@ -29,10 +27,8 @@ public class EnemyCreation
     }
    
     
-    public static String setGender()
-    {
-        int i = (int)(Math.random()*2);
-        
+    public static String setGender(){
+        int i = (int)(Math.random()*2);        
         if (i == 1)       
             return "male";
         else
@@ -40,12 +36,9 @@ public class EnemyCreation
     }
     
     
-    public static String setClass() // Warrior, Ranger, Mage, Thief
-    {
-        int i = (int)(Math.random()*4);
-        
-        switch (i)
-        {
+    public static String setClass(){ // Warrior, Ranger, Mage, Thief
+        int i = (int)(Math.random()*4);        
+        switch (i){
             case 0:
                 return "Warrior";
             case 1:
@@ -60,12 +53,9 @@ public class EnemyCreation
     }
     
     
-    public static String setRace() //Human, Orc, Undead, Goblin
-    {
-        int i = (int)(Math.random()*4);
-        
-        switch (i)
-        {
+    public static String setRace(){ //Human, Orc, Undead, Goblin
+        int i = (int)(Math.random()*4);        
+        switch (i){
             case 0:
                 return "Human";
             case 1:
@@ -80,24 +70,18 @@ public class EnemyCreation
     }
     
     
-    public static int setLvl() // Default
-    {
+    public static int setLvl(){ // Default
         return 1;
     }
     
-    public static int[] setAtt(String enemyClass)
-    {
-         int[] att = new int[5];
-         
-        for(int i=0; i<att.length; i++)
-        {
-            do
-            {
+    public static int[] setAtt(String enemyClass){
+         int[] att = new int[5];         
+        for(int i=0; i<att.length; i++){
+            do{
             att[i] = (int)(Math.random()*20);
             }while(att[i]<6);
         }
-        switch(enemyClass)
-        {
+        switch(enemyClass){
             case "Warrior":
                 att[0] += 4;
                 att[1] += 0;
