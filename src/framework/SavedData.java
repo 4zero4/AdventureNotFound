@@ -61,7 +61,7 @@ public class SavedData {
 		String dir = savedFile.getAbsoluteFile().toString();
 		ArrayList<String> lines = new ArrayList<String>();
 		lines = FileWizard.readFile(dir);
-		System.out.print(lines);
+		System.out.println(lines);
 	}
 	
 	public void save(ArrayList<String> lines) {
